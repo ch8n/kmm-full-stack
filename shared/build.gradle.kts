@@ -14,6 +14,7 @@ plugins {
 kotlin {
 
     js {
+        useEsModules()
         browser()
         binaries.executable()
     }

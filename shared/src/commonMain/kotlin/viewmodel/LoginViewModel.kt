@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import usecases.LoginUser
 import utils.ResultOf
 
+
 class LoginViewModel(
     private val loginUser: LoginUser
 ) : ViewModel() {

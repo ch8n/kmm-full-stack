@@ -2,12 +2,8 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalDistributionDsl
 import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target.COMMONJS2
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackOutput.Target.UMD
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -17,21 +13,16 @@ plugins {
 }
 
 kotlin {
-
+    //https://x.com/vnturansky
     js {
+        moduleName = "kotlinlib"
         useEsModules()
-        moduleName = "kotlinJs"
         browser {
-
             testTask {
                 enabled = false
             }
             webpackTask {
                 enabled = false
-            }
-            @OptIn(ExperimentalDistributionDsl::class)
-            distribution {
-                outputDirectory.set(projectDir.resolve("output"))
             }
         }
         binaries.executable()

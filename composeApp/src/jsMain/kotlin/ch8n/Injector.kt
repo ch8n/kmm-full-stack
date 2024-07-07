@@ -2,16 +2,16 @@ package ch8n
 
 import networkModule
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import useCaseModule
 import viewModelModule
+import viewmodel.LoginViewModel
 
 @OptIn(ExperimentalJsExport::class)
 @JsExport
 object Injector : KoinComponent {
-
-    fun test(): String = "Hello from Kotlin Singleton!"
 
     init {
         console.log("starting koin injection")
@@ -25,7 +25,7 @@ object Injector : KoinComponent {
         }
     }
 
-    //val inputScreenViewModel by inject<LoginViewModel>()
+    val loginViewModel by inject<LoginViewModel>()
 }
 
 val kotlinJsModule = module { }
