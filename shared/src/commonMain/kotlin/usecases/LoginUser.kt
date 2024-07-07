@@ -4,7 +4,9 @@ import data.models.network.AuthRequest
 import data.models.network.Response
 import data.remote.apis.AuthSource
 import utils.ResultOf
+import kotlin.js.JsName
 
+@JsName("LoginUser")
 class LoginUser(
     private val authSource: AuthSource
 ) {

@@ -8,8 +8,10 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.utils.io.core.*
 import utils.ResultOf
+import kotlin.js.JsName
 import kotlin.use
 
+@JsName("ApiManager")
 class ApiManager(
     val httpClient: HttpClient
 ) {

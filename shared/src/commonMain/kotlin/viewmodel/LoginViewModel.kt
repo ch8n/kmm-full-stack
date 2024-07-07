@@ -8,8 +8,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import usecases.LoginUser
 import utils.ResultOf
+import kotlin.js.JsName
 
 
+@JsName("LoginViewModel")
 class LoginViewModel(
     private val loginUser: LoginUser
 ) : ViewModel() {
